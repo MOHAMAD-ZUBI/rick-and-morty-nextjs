@@ -70,7 +70,11 @@ const CharacterList = ({ charcters }: Props) => {
               {char.name}
             </h2>
             <div className=" flex flex-row gap-2 items-center">
-              <div className=" bg-red-800 rounded-full w-3 h-3" />
+              {char.status === "Alive" ? (
+                <div className=" bg-green-600 rounded-full w-3 h-3" />
+              ) : (
+                <div className=" bg-red-800 rounded-full w-3 h-3" />
+              )}
               <p className="text-white">{char.status}</p>
             </div>
             <div className=" flex flex-col items-start gap-2 mt-2">

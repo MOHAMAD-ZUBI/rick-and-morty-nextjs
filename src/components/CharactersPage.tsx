@@ -22,9 +22,9 @@ interface Props {
 export const Page = ({ characters }: Props) => {
   return (
     <div className=" max-w-[1500px] w-full min-h-screen mx-auto ">
-      <h2 className="mt-32 text-center font-bold text-2xl">
+      <h2 className="mt-32 text-center font-bold text-7xl">
         {" "}
-        Welcome to Rick And Morty Characters Preview
+        The Rick and Morty API
       </h2>
 
       <div className="mt-16 w-full">
@@ -32,18 +32,4 @@ export const Page = ({ characters }: Props) => {
       </div>
     </div>
   );
-};
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch("https://rickandmortyapi.com/api/character");
-  if (!res.ok) console.log("error fetching");
-  const data = await res.json();
-
-  console.log(data);
-
-  return {
-    props: {
-      characters: data.results,
-    },
-  };
 };
